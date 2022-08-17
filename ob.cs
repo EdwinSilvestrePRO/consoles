@@ -1,27 +1,34 @@
 public class Objects
 {
-	interface Group
+	abstract class Times 
 	{
-		void Action();
-		int Sum(int n1, int n2);
+		public abstract string[] data ();
+	}
+
+	class Hours : Times 
+	{
+		public override string[] data ()
+		{
+			return new string[] {"12:58:00", "21:20:11", "12:13:15"};
+		}
 
 	}
 
-	struct Methods : Group
+	static void Main (string[] Arguments)
 	{
-		public void Action ()
+		string[] all;
+		System.Collections.ArrayList list = new System.Collections.ArrayList(1);
+		list.Add(new Hours());
+
+		foreach (Times h in list)
 		{
-			System.Console.WriteLine("this is my method Action()");
+			all = h.data();
+		System.Console.WriteLine(all);
+		System.Console.ReadLine();
+
+
+
+		break;
 		}
-		public int Sum (int n1, int n2)
-		{
-		 return n1+n2;
-		}
-	}
-	static void Main (string[] Args)
-	{
-		
-	System.Console.WriteLine("Tomorrow I Work with objects and class");
-	System.Console.ReadLine();
 	}
 }
